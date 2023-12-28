@@ -3,7 +3,6 @@ import React, {FC} from 'react';
 import color from '../styles/colors';
 
 interface UserInfoItemProps {
-  //   icon: any;
   label: string;
   text: string | number;
 }
@@ -12,10 +11,6 @@ const UserInfoItem: FC<UserInfoItemProps> = ({label, text}) => {
   return (
     <View style={styles.info}>
       <View style={styles.infoItem}>
-        {/* <View style={styles.iconContainer}>
-          <Text>icon</Text>
-        </View> */}
-
         <View style={styles.infoContent}>
           <Text style={styles.infoLabel}>{label}</Text>
           <Text style={styles.infoText}>{text}</Text>
