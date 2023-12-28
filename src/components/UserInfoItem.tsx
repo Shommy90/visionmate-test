@@ -36,9 +36,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   infoContent: {},
-  iconContainer: {
-    marginRight: 10,
-  },
   infoLabel: {
     color: color.textSecondary,
     marginBottom: 5,
