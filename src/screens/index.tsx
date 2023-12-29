@@ -15,7 +15,7 @@ const Home: FC = () => {
 
     navigation.navigate({
       name: 'User',
-      params: randomUser,
+      params: {user: randomUser},
     } as never);
   }, [navigation, users]);
 

@@ -1,14 +1,28 @@
 import React, {FC} from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  NativeStackNavigationOptions,
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
 import Home from '../screens';
 import Users from '../screens/Users';
 import User from '../screens/User';
 import color from '../styles/colors';
+import {UserInfo} from '../types/User';
 
-const Stack = createNativeStackNavigator();
+type RootStackParamList = {
+  Home: undefined;
+  Users: undefined;
+  User: {user: UserInfo};
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigation: FC = () => {
+  const screenOptions: NativeStackNavigationOptions = {
+    headerShadowVisible: false,
+  };
+
   return (
     <NavigationContainer
       theme={{
@@ -18,11 +32,7 @@ const Navigation: FC = () => {
           background: color.primary,
         },
       }}>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerShadowVisible: false,
-        }}>
+      <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
         <Stack.Screen
           name="Home"
           component={Home}

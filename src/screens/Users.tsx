@@ -32,7 +32,7 @@ const Users: FC = () => {
     const searchKeywords = text.toLowerCase().split(' ');
 
     const filteredUsers = users?.filter(user => {
-      return searchKeywords?.every(
+      return searchKeywords.every(
         keyword =>
           user.name.first.toLowerCase().includes(keyword) ||
           user.location.city.toLowerCase().includes(keyword),
@@ -65,7 +65,7 @@ const Users: FC = () => {
               onPress={() =>
                 navigation.navigate({
                   name: 'User',
-                  params: {picture, name, location, login},
+                  params: {user: {picture, name, location, login}},
                 } as never)
               }>
               <UserCard
