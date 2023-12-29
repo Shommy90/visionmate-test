@@ -1,16 +1,22 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {FC} from 'react';
 import color from '../styles/colors';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
 
 interface UserInfoItemProps {
   label: string;
   text: string | number;
+  icon: string;
 }
 
-const UserInfoItem: FC<UserInfoItemProps> = ({label, text}) => {
+const UserInfoItem: FC<UserInfoItemProps> = ({icon, label, text}) => {
   return (
     <View style={styles.info}>
       <View style={styles.infoItem}>
+        <View style={styles.iconContainer}>
+          <EntypoIcon name={icon} size={18} color={color.light} />
+        </View>
+
         <View style={styles.infoContent}>
           <Text style={styles.infoLabel}>{label}</Text>
           <Text style={styles.infoText}>{text}</Text>
@@ -34,6 +40,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: color.light,
     paddingVertical: 10,
+  },
+  iconContainer: {
+    marginRight: 10,
   },
   infoContent: {},
   infoLabel: {
