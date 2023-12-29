@@ -5,9 +5,10 @@ import useGlobalState from '../hooks/use-global-state';
 import {getRandomUser} from '../helpers/random-user';
 import {User} from '../types/User';
 import Button from '../components/Button';
+import {HomeScreenProp} from '../types/navigation';
 
 const Home: FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenProp>();
   const {users} = useGlobalState();
 
   const handleRandomizeUser = useCallback(() => {
@@ -23,7 +24,7 @@ const Home: FC = () => {
     <View style={styles.container}>
       <Button
         text={'Users List'}
-        onPress={() => navigation.navigate('Users' as never)}
+        onPress={() => navigation.navigate('Users')}
       />
       <Button text={'Randomize User'} onPress={handleRandomizeUser} />
     </View>

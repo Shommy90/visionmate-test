@@ -1,4 +1,4 @@
-import {RouteProp} from '@react-navigation/native';
+import {RouteProp, NavigationProp} from '@react-navigation/native';
 import {UserInfo} from './User';
 
 export type RootStackParamList = {
@@ -8,3 +8,5 @@ export type RootStackParamList = {
 };
 
 export type UserRouteProp = RouteProp<RootStackParamList, 'User'>;
+
+export type HomeScreenProp = NavigationProp<RootStackParamList, 'Home'>;
