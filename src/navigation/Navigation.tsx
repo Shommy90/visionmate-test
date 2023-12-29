@@ -8,13 +8,7 @@ import Home from '../screens';
 import Users from '../screens/Users';
 import User from '../screens/User';
 import color from '../styles/colors';
-import {UserInfo} from '../types/User';
-
-type RootStackParamList = {
-  Home: undefined;
-  Users: undefined;
-  User: {user: UserInfo};
-};
+import {RootStackParamList} from '../types/navigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

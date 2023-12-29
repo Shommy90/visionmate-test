@@ -1,12 +1,11 @@
 import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React, {FC, useEffect, useState} from 'react';
-import {useRoute, RouteProp} from '@react-navigation/native';
+import {useRoute} from '@react-navigation/native';
 import UserInfoItem from '../components/UserInfoItem';
 import UserInfoError from '../components/UserInfoError';
 import {UserInfo} from '../types/User';
 import color from '../styles/colors';
-
-type UserRouteProp = RouteProp<{User: {user: UserInfo}}, 'User'>;
+import {UserRouteProp} from '../types/navigation';
 
 const User: FC = () => {
   const route = useRoute<UserRouteProp>();
