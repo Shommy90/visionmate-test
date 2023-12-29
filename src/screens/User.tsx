@@ -32,14 +32,19 @@ const User: FC = () => {
         <Text style={styles.username}>{`@${login.username}`}</Text>
       </View>
 
-      <UserInfoItem label={'First Name'} text={name.first} />
-      <UserInfoItem label={'Last Name'} text={name.last} />
-      <UserInfoItem label={'City'} text={location.city} />
+      <UserInfoItem icon="pencil" label={'First Name'} text={name.first} />
+      <UserInfoItem icon="pencil" label={'Last Name'} text={name.last} />
+      <UserInfoItem icon="location" label={'City'} text={location.city} />
       <UserInfoItem
+        icon="location-pin"
         label={'Street Address'}
         text={`${location.street.name} ${location.street.number}`}
       />
-      <UserInfoItem label={'Postalcode'} text={location.postcode} />
+      <UserInfoItem
+        icon="newsletter"
+        label={'Postalcode'}
+        text={location.postcode}
+      />
     </ScrollView>
   );
 };
